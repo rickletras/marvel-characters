@@ -7,11 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "TB_CHARACTER")
-public class Characters implements Serializable {
+public class Character implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -27,10 +29,19 @@ public class Characters implements Serializable {
 	@Column(name = "THUMBNAIL")
 	private String thumbnail;
 	
-	@Column(name = "STORIES", nullable = false)
-	private String stories;
+	@ManyToOne
+	@JoinColumn(name = "STORIE_ID")
+	private Storie storie = new Storie();
 	
-	public Characters() {}
+	@ManyToOne
+	@JoinColumn(name = "COMIC_ID")
+	private Comic comic = new Comic();
+	
+	public Character() {}
+	
+	public Long getId() {
+		return id;
+	}
 
 	public String getName() {
 		return name;
@@ -56,18 +67,22 @@ public class Characters implements Serializable {
 		this.thumbnail = thumbnail;
 	}
 
-	public String getStories() {
-		return stories;
+	public Storie getStories() {
+		return storie;
 	}
 
-	public void setStories(String stories) {
-		this.stories = stories;
+	public void setStories(Storie stories) {
+		this.storie = stories;
 	}
 
-	public Long getId() {
-		return id;
+	public Comic getComic() {
+		return comic;
 	}
 
+	public void setComic(Comic comic) {
+		this.comic = comic;
+	}	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -84,7 +99,7 @@ public class Characters implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Characters other = (Characters) obj;
+		Character other = (Character) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

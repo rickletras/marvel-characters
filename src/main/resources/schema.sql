@@ -1,7 +1,23 @@
 CREATE TABLE TB_CHARACTER (
-  id bigint auto_increment,
+  ID bigint auto_increment,
   NAME VARCHAR(50) NOT NULL,
   DESCRIPTION longtext NOT NULL,
-  THUMBNAIL VARCHAR(255) NULL,
-  STORIES longtext NOT NULL
+  THUMBNAIL VARCHAR(100) NULL,
+  COMIC_ID bigint NULL,
+  STORIE_ID bigint NULL,
+  PRIMARY KEY (ID)
+);
+
+CREATE TABLE TB_COMIC (
+	ID bigint auto_increment,
+	CHARACTER_ID bigint NOT NULL,
+	COMIC longtext NOT NULL,
+  PRIMARY KEY (ID)
+);
+
+CREATE TABLE TB_STORIE(
+	ID bigint auto_increment,
+	CHARACTER_ID bigint NOT NULL,
+	STORIE longtext NOT NULL,
+  PRIMARY KEY (ID)
 );
