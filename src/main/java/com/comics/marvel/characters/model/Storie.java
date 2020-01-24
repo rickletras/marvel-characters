@@ -28,7 +28,7 @@ public class Storie implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name = "CHARACTER_ID", nullable = false)
-	private Character characters;
+	private Character character;
 
 	public Storie() {}
 
@@ -45,11 +45,11 @@ public class Storie implements Serializable {
 	}
 
 	public Character getCharacters() {
-		return characters;
+		return character;
 	}
 
 	public void setCharacters(Character characters) {
-		this.characters = characters;
+		this.character = characters;
 	}
 
 	@Override
@@ -79,6 +79,6 @@ public class Storie implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Storie [id=" + id + ", storie=" + storie + ", characters=" + characters + "]";
+		return "Storie [id=" + id + ", storie=" + storie + ", characters=" + character + "]";
 	}
 }
