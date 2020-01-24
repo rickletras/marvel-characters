@@ -1,0 +1,3 @@
+INSERT INTO TB_CHARACTER(NAME, DESCRIPTION, THUMBNAIL, STORIES) 
+VALUES 
+    ('Hulk', 'Hulk é um selvagem e poderoso alter ego do Dr. Robert Bruce Banner, um cientista que foi atingido por raios gama enquanto salvava um adolescente durante o teste militar de uma bomba por ele desenvolvida. Este adolescente, Rick Jones, tornou-se companheiro de Banner, ajudando-o a manter o Hulk sob controle e mantê-lo longe dos ataques dos militares, que viam a criatura como uma ameaça.', 'images/hulk.jpg', 'O Retorno do Incrivel Hulk (1988)\nO Julgamento do Incrivel Hulk (1989)\nA Morte do Incrivel Hulk (1990)\nHulk (2003)\nO Incrível Hulk (2008)');

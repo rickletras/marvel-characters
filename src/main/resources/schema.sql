@@ -1,0 +1,7 @@
+CREATE TABLE TB_CHARACTER (
+  id bigint auto_increment,
+  NAME VARCHAR(50) NOT NULL,
+  DESCRIPTION longtext NOT NULL,
+  THUMBNAIL VARCHAR(255) NULL,
+  STORIES longtext NOT NULL
+);
